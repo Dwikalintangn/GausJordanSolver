@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gauss-Jordan Solver - Step by Step</title>
+    <link rel="icon" type="image/png" href="asset/Logo/logo_GausJordan.png" />
+
+    <script>
+      if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+      };
+    </script>
+
+    <link rel="stylesheet" href="asset/style.css" />
+  </head>
+  <body
+    class="bg-slate-50 dark:bg-slate-900 min-h-screen p-4 md:p-10 transition-colors duration-300"
+  >
+    <div class="max-w-5xl mx-auto">
+      <div class="flex justify-end mb-6">
+        <button
+          id="dark-mode-toggle"
+          class="p-3 bg-white dark:bg-slate-800 shadow-sm border border-slate-200 dark:border-slate-700 rounded-xl hover:scale-110 transition-all flex items-center gap-2"
+        >
+          <span id="theme-icon" class="text-xl">🌙</span>
+          <span
+            class="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider"
+            >Mode</span
+          >
+        </button>
+      </div>
+
+      <header class="text-center mb-10 object-center">
+        <img src="asset/Logo/logo_GausJordan.png" alt=""  class="size-32 mx-auto object-contain mb-4 border border-indigo-600"/>
+        <h1
+          class="text-4xl font-black text-slate-800 dark:text-white mb-2 tracking-tight"
+        >
+          GAUSS-JORDAN <span class="text-indigo-600">SOLVER</span>
+        </h1>
+        <p class="text-slate-500 dark:text-slate-400 italic">
+          Penyelesaian sistem persamaan linear & matriks langkah demi langkah
+        </p>
+      </header>
+
+      <div
+        class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-500 dark:border-slate-700 mb-8"
+      >
+        <div class="flex flex-wrap items-center justify-center gap-6">
+          <div class="flex items-center gap-3">
+            <label class="text-sm font-bold text-slate-700 dark:text-slate-300"
+              >Baris:</label
+            >
+            <input
+              type="number"
+              id="rows"
+              value="3"
+              min="1"
+              max="6"
+              class="border-2 border-slate-200 dark:border-slate-600 dark:bg-slate-700 dark:text-white rounded-lg p-2 w-16 focus:border-indigo-500 outline-none transition"
+            />
+          </div>
+          <div class="text-xl font-bold text-slate-300 dark:text-slate-600">
+            ×
+          </div>
+          <div class="flex items-center gap-3">
+            <label class="text-sm font-bold text-slate-700 dark:text-slate-300"
+              >Kolom:</label
+            >
+            <input
+              type="number"
+              id="cols"
+              value="4"
+              min="1"
+              max="7"
+              class="border-2 border-slate-200 dark:border-slate-600 dark:bg-slate-700 dark:text-white rounded-lg p-2 w-16 focus:border-indigo-500 outline-none transition"
+            />
+          </div>
+          <button
+            onclick="generateMatrix()"
+            class="bg-slate-800 dark:bg-indigo-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-slate-700 dark:hover:bg-indigo-500 transition shadow-md"
+          >
+            Update Grid
+          </button>
+        </div>
+      </div>
+
+      <div
+        class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm border border-slate-500 dark:border-slate-700 mb-8"
+      >
+        <div
+          id="matrix-input-grid"
+          class="inline-grid gap-3 min-w-full justify-center"
+        ></div>
+        <div class="mt-10 text-center">
+          <button
+            onclick="solve()"
+            class="bg-indigo-600 text-white px-12 py-4 rounded-xl font-bold text-lg hover:bg-indigo-700 shadow-xl shadow-indigo-200 dark:shadow-none transition-all active:scale-95"
+          >
+            Mulai Hitung
+          </button>
+        </div>
+      </div>
+
+      <div id="steps-output" class="space-y-6 pb-20"></div>
+    </div>
+
+    <footer class="text-center bg-white dark:bg-slate-800 rounded-md  h-20">
+      <p class="text-2xl text-black  dark:text-indigo-500 px-12 py-3 font-bold"> © By Dwika Lintang Nugraha</p>
+    </footer>
+
+    <script src="asset/script.js"></script>
+  </body>
+</html>
