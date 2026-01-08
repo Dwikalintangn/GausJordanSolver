@@ -45,7 +45,7 @@ Tidak perlu instalasi rumit! Cukup ikuti langkah berikut:
 
 | Light Mode                                                                         | Dark Mode                                                                        |
 | ---------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| ![Light Mode Preview](asset/img/views Lightmode.png) | ![Dark Mode Preview](asset/img/viesw Darkmode.png) |
+| ![Light Mode Preview](asset/img/views_Lightmode.png) | ![Dark Mode Preview](asset/img/views_Darkmode.png) |
 
 ## 🤝 Kontribusi
 
@@ -64,4 +64,5 @@ Didistribusikan di bawah Lisensi MIT. Lihat file `LICENSE` untuk informasi lebih
 ---
 
 Dibuat dengan ❤️ oleh [Dwikalintangn](https://github.com/Dwikalintangn)
+
 
